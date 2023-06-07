@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "85d17f83-46e1-4563-8e16-af56b04e10b0",
+		"name": "Prueba tecnica Dish",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27844906"
+	},
+	"item": [
+		{
+			"name": "Obetner suscriptor o suscriptores",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "https://scvv3c7c00.execute-api.us-east-1.amazonaws.com/dev/readCatalog",
+					"protocol": "https",
+					"host": [
+						"scvv3c7c00",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"readCatalog"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar un suscriptor",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://5zmvzgj9ec.execute-api.us-east-1.amazonaws.com/dev/deleteCatalog?telefono_celular=55555555",
+					"protocol": "https",
+					"host": [
+						"5zmvzgj9ec",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"deleteCatalog"
+					],
+					"query": [
+						{
+							"key": "telefono_celular",
+							"value": "55555555"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar suscriptor",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"suscriptor\":{\r\n        \"info_nombre\":{\r\n            \"nombre\":\"Juan\",\r\n            \"apellido_materno\":\"Garcia\",\r\n            \"apellido_paterno\":\"Lopez\"\r\n        },\r\n        \"edad\":15,\r\n        \"telefono_celular\":\"1230456789\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://9lrcsvithg.execute-api.us-east-1.amazonaws.com/dev/updateCatalog",
+					"protocol": "https",
+					"host": [
+						"9lrcsvithg",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"updateCatalog"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear suscriptor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"suscriptor\":{\r\n        \"info_nombre\":{\r\n            \"nombre\":\"Juan\",\r\n            \"apellido_materno\":\"Garcia\",\r\n            \"apellido_paterno\":\"Lopez\"\r\n        },\r\n        \"edad\":25,\r\n        \"telefono_celular\":\"3333961968\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://riopblue27.execute-api.us-east-1.amazonaws.com/dev/createCatalog",
+					"protocol": "https",
+					"host": [
+						"riopblue27",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"createCatalog"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

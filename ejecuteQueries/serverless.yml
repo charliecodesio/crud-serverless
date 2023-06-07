@@ -1,0 +1,27 @@
+service: ejecuteQueries
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: python3.9
+  region: us-east-1
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - lambda:InvokeFunction
+        - rds-db:connect
+        - secretsmanager:GetSecretValue
+      Resource: "*"
+  environment:
+    DATABASE: db-dish
+    HOST: db-dish.cre7kbhih3un.us-east-1.rds.amazonaws.com
+    SECRET_MANAGER_ARN: arn:aws:secretsmanager:us-east-1:831011833915:secret:rds!db-a69cfcb6-01ee-439d-9da2-30a920b56c2e-TKejoA
+    
+plugins:
+  - serverless-plugin-include-dependencies
+  - serverless-python-requirements
+
+functions:
+  ejecuteQueries:
+    handler: handler.ejecuteQueries

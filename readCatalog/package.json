@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "serverless-plugin-include-dependencies": "^5.1.0"
+  },
+  "dependencies": {
+    "glob": "^10.2.7",
+    "serverless-python-requirements": "^6.0.0"
+  }
+}

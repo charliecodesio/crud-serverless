@@ -1,0 +1,28 @@
+service: readCatalog
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: python3.9
+  region: us-east-1
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - lambda:InvokeFunction
+      Resource: "*"
+  environment:
+    EJECUTEQUERIES: arn:aws:lambda:us-east-1:831011833915:function:ejecuteQueries-dev-ejecuteQueries
+    
+plugins:
+  - serverless-plugin-include-dependencies
+  - serverless-python-requirements
+
+functions:
+  readCatalog:
+    handler: handler.readCatalog
+    events:
+      - http:
+          path: readCatalog
+          method: get
+          cors: true
