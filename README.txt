@@ -27,10 +27,3 @@ Pasos ya previamente clonado el repositorio::
             npm install
             sls deploy
             serverless deploy --aws-profile PROFILE --stage dev --region us-east-1
-
-Enpoints de las Apis:
- - GET https://scvv3c7c00.execute-api.us-east-1.amazonaws.com/dev/readCatalog
- - GET https://scvv3c7c00.execute-api.us-east-1.amazonaws.com/dev/readCatalog?telefono_celular={telefono_celular}
- - DELETE https://5zmvzgj9ec.execute-api.us-east-1.amazonaws.com/dev/deleteCatalog?telefono_celular={telefono_celular} 
- - PUT https://9lrcsvithg.execute-api.us-east-1.amazonaws.com/dev/updateCatalog
- - POST https://riopblue27.execute-api.us-east-1.amazonaws.com/dev/createCatalog
